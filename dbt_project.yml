@@ -1,4 +1,4 @@
-name: 'ahrq_measures'
+name: 'ahrq_quality_indicators'
 version: '0.1.0'
 config-version: 2
 require-dbt-version: ">=1.10.0"
@@ -19,9 +19,9 @@ vars:
   tuva_last_run: '{{ run_started_at.astimezone(modules.pytz.timezone("UTC")) }}'
 
 seeds:
-  ahrq_measures:
+  ahrq_quality_indicators:
     value_sets:
-      ahrq_measures:
+      ahrq_quality_indicators:
         pqi__measures:
           +post-hook: "{{ the_tuva_project.load_versioned_seed('value_sets','ahrq_measures__pqi_measures.csv') }}"
         pqi__value_sets:
