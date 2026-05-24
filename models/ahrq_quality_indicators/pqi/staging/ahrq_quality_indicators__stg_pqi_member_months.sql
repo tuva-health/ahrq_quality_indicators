@@ -8,7 +8,7 @@ date_int as (
     select distinct
         replace(year_month, '-', '') as yyyymm
       , first_day_of_month
-    from {{ ref('reference_data__calendar') }} as c
+    from {{ ref('terminology__calendar') }} as c
 )
 
 select

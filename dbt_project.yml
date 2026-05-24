@@ -23,6 +23,6 @@ seeds:
     value_sets:
       ahrq_quality_indicators:
         pqi__measures:
-          +post-hook: "{{ the_tuva_project.load_versioned_seed('value_sets','ahrq_measures__pqi_measures.csv') }}"
+          +post-hook: "{{ the_tuva_project.load_seed(the_tuva_project.get_seed_bucket('value_sets') ~ '/data-marts/ahrq-quality-indicators/' ~ var('ahrq_quality_indicators_seed_version', '1.0.0'), 'ahrq_measures__pqi_measures.csv', true, true, true) }}"
         pqi__value_sets:
-          +post-hook: "{{ the_tuva_project.load_versioned_seed('value_sets','ahrq_measures__pqi.csv') }}"
+          +post-hook: "{{ the_tuva_project.load_seed(the_tuva_project.get_seed_bucket('value_sets') ~ '/data-marts/ahrq-quality-indicators/' ~ var('ahrq_quality_indicators_seed_version', '1.0.0'), 'ahrq_measures__pqi.csv', true, true, true) }}"
