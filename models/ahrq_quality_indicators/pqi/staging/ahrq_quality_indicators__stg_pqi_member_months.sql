@@ -18,5 +18,5 @@ select
   , d.yyyymm as year_month
 
 from
-    {{ ref('core__member_months') }} as mm
+    {{ ref('core__member_month') }} as mm
 inner join date_int as d on mm.year_month = d.yyyymm

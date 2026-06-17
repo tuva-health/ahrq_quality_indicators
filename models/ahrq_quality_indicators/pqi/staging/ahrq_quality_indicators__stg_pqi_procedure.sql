@@ -3,7 +3,7 @@
 ) }}
 
 select
-    normalized_code_type
+    code_system as normalized_code_type
   , normalized_code
   , encounter_id
   , data_source
