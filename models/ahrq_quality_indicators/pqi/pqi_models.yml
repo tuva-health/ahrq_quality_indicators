@@ -787,7 +787,7 @@ models:
         - pqi
       materialized: view
     description: >
-      Staging table for PQI member months, from financial_pmpm__member_months.
+      Staging table for PQI member-month records from core.member_month.
 
   - name: ahrq_quality_indicators__stg_pqi_patient
     config:
