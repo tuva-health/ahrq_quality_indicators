@@ -26,7 +26,7 @@ seeds:
         description: Number of the PQI measure
         config:
           meta:
-            terminology: https://thetuvaproject.com/value-sets/ahrq-quality-indicators#measures
+            terminology: https://thetuvaproject.com/data-marts/ahrq-quality-indicators
   - name: pqi__measures
     description: Names and descriptions of each of the PQI measures
     config:
