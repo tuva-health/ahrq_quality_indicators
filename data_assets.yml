@@ -1,0 +1,7 @@
+schema_version: 1
+package: ahrq-quality-indicators
+assets:
+  - seed: pqi__measures
+    path: pqi__measures.csv.gz
+  - seed: pqi__value_sets
+    path: pqi__value_sets.csv.gz
