@@ -1,7 +1,7 @@
 name: 'ahrq_quality_indicators'
 version: '1.0.0'
 config-version: 2
-require-dbt-version: ">=1.10.0"
+require-dbt-version: ">=1.10.5,<3.0.0"
 
 profile: default
 
@@ -23,6 +23,6 @@ seeds:
     value_sets:
       ahrq_quality_indicators:
         pqi__measures:
-          +post-hook: "{{ the_tuva_project.load_package_seed('ahrq_quality_indicators', 'ahrq-quality-indicators', 'pqi__measures.csv.gz') }}"
+          +post-hook: "{{ the_tuva_project.load_package_seed('ahrq-quality-indicators', ahrq_quality_indicators.get_ahrq_quality_indicators_package_version(), 'pqi__measures.csv.gz') }}"
         pqi__value_sets:
-          +post-hook: "{{ the_tuva_project.load_package_seed('ahrq_quality_indicators', 'ahrq-quality-indicators', 'pqi__value_sets.csv.gz') }}"
+          +post-hook: "{{ the_tuva_project.load_package_seed('ahrq-quality-indicators', ahrq_quality_indicators.get_ahrq_quality_indicators_package_version(), 'pqi__value_sets.csv.gz') }}"
