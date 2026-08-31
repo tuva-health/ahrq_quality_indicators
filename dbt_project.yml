@@ -17,12 +17,13 @@ clean-targets:
 
 vars:
   tuva_last_run: '{{ run_started_at.astimezone(modules.pytz.timezone("UTC")) }}'
+  ahrq_quality_indicators_data_asset_version: "1.0.0"
 
 seeds:
   ahrq_quality_indicators:
     value_sets:
       ahrq_quality_indicators:
         pqi__measures:
-          +post-hook: "{{ the_tuva_project.load_package_seed('ahrq-quality-indicators', ahrq_quality_indicators.get_ahrq_quality_indicators_package_version(), 'pqi__measures.csv.gz') }}"
+          +post-hook: "{{ the_tuva_project.load_package_seed('data-marts/ahrq-quality-indicators', var('ahrq_quality_indicators_data_asset_version'), 'pqi__measures.csv.gz') }}"
         pqi__value_sets:
-          +post-hook: "{{ the_tuva_project.load_package_seed('ahrq-quality-indicators', ahrq_quality_indicators.get_ahrq_quality_indicators_package_version(), 'pqi__value_sets.csv.gz') }}"
+          +post-hook: "{{ the_tuva_project.load_package_seed('data-marts/ahrq-quality-indicators', var('ahrq_quality_indicators_data_asset_version'), 'pqi__value_sets.csv.gz') }}"
