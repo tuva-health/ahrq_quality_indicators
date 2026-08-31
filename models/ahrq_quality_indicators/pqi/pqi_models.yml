@@ -33,10 +33,15 @@ models:
           meta:
             data_type: varchar
       - name: pqi_number
-        description: the number of the pqi measure
+        description: Zero-padded two-character identifier for the PQI measure.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['01', '03', '05', '07', '08', '11', '12', '14', '15', '16']
         config:
           meta:
-            data_type: integer
+            data_type: varchar
       - name: tuva_last_run
         description: >
           The last time the data was refreshed.  Generated
@@ -83,10 +88,15 @@ models:
           meta:
             data_type: integer
       - name: pqi_number
-        description: the number of the pqi measure
+        description: Zero-padded two-character identifier for the PQI measure.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['01', '03', '05', '07', '08', '11', '12', '14', '15', '16']
         config:
           meta:
-            data_type: integer
+            data_type: varchar
       - name: tuva_last_run
         description: >
           The last time the data was refreshed.  Generated
@@ -132,10 +142,15 @@ models:
           meta:
             data_type: varchar
       - name: pqi_number
-        description: the number of the pqi measure
+        description: Zero-padded two-character identifier for the PQI measure.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['01', '03', '05', '07', '08', '11', '12', '14', '15', '16']
         config:
           meta:
-            data_type: integer
+            data_type: varchar
       - name: tuva_last_run
         description: >
           The last time the data was refreshed.  Generated
@@ -172,10 +187,15 @@ models:
           meta:
             data_type: integer
       - name: pqi_number
-        description: the number of the pqi measure
+        description: Zero-padded two-character identifier for the PQI measure.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['01', '03', '05', '07', '08', '11', '12', '14', '15', '16']
         config:
           meta:
-            data_type: integer
+            data_type: varchar
       - name: denom_count
         description: the count of patients that qualified for the denominator of the
           corresponding year and pqi number.
@@ -218,10 +238,15 @@ models:
       analytics reporting.
     columns:
       - name: pqi_number
-        description: the number of the pqi measure
+        description: Zero-padded two-character identifier for the PQI measure.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['01', '03', '05', '07', '08', '11', '12', '14', '15', '16']
         config:
           meta:
-            data_type: integer
+            data_type: varchar
       - name: pqi_name
         description: the name of the pqi measure
         config:
