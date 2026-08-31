@@ -4,14 +4,12 @@ dbt package for the Tuva Project AHRQ Quality Indicators data mart.
 
 ## Data assets
 
-Released seed contents are stored as an immutable snapshot under
-`s3://tuva-public-resources/ahrq-quality-indicators/<package-version>/`.
-The checked-in CSV files define the dbt loader headers, and `data_assets.yml`
-is the publisher inventory. Dataset changes are released with a new package
-version.
+Seed contents are stored under
+`s3://tuva-public-resources/data-marts/ahrq-quality-indicators/<asset-version>/`
+and mirrored to GCS and Azure. The checked-in CSV files contain only the
+headers required by dbt.
 
-On a version-changing push to `main`, or a manual recovery from current
-`main`, release automation verifies that every path in `data_assets.yml`
-exists under the package-version folder in S3, GCS, and Azure before creating
-the `v<package-version>` tag and draft GitHub release. Each package version
-maps directly to its public data-asset folder.
+`ahrq_quality_indicators_data_asset_version` selects the folder and defaults to
+`1.0.0`. Package code and data assets are versioned independently and are
+coordinated manually. Cloud manifests record the asset inventory, provenance,
+and release status; dbt loads the configured path without reading them.
