@@ -7,7 +7,7 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 1 as pqi_number
+  , '01' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_01_exclusions') }} as e
 
@@ -18,7 +18,7 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 3 as pqi_number
+  , '03' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_03_exclusions') }} as e
 
@@ -29,7 +29,7 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 5 as pqi_number
+  , '05' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_05_exclusions') }} as e
 
@@ -40,7 +40,7 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 7 as pqi_number
+  , '07' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_07_exclusions') }} as e
 
@@ -51,7 +51,7 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 8 as pqi_number
+  , '08' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_08_exclusions') }} as e
 
@@ -62,7 +62,7 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 11 as pqi_number
+  , '11' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_11_exclusions') }} as e
 
@@ -73,7 +73,7 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 12 as pqi_number
+  , '12' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_12_exclusions') }} as e
 
@@ -84,7 +84,7 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 14 as pqi_number
+  , '14' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_14_exclusions') }} as e
 
@@ -95,7 +95,7 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 15 as pqi_number
+  , '15' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_15_exclusions') }} as e
 
@@ -106,6 +106,6 @@ select
   , e.encounter_id
   , e.exclusion_reason
   , e.exclusion_number
-  , 16 as pqi_number
+  , '16' as pqi_number
   , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
 from {{ ref('ahrq_quality_indicators__int_pqi_16_exclusions') }} as e

@@ -20,4 +20,5 @@ from {{ ref('ahrq_quality_indicators__pqi_num_long') }} as p
 inner join {{ ref('ahrq_quality_indicators__stg_pqi_inpatient_encounter') }} as e
     on p.encounter_id = e.encounter_id
     and p.data_source = e.data_source
-inner join {{ ref('pqi__measures') }} as m on cast(p.pqi_number as {{ dbt.type_string() }}) = m.pqi_number
+inner join {{ ref('pqi__measures') }} as m
+    on p.pqi_number = m.pqi_number

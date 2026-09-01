@@ -1,0 +1,61 @@
+version: 2
+
+unit_tests:
+  - name: test_pqi_exclusion_long_uses_zero_padded_string_identifiers
+    description: >
+      Every PQI exclusion branch emits the same zero-padded string identifier
+      used by the numerator, denominator, rate, summary, and package assets.
+    model: ahrq_quality_indicators__pqi_exclusion_long
+    config:
+      enabled: "{{ var('claims_enabled', False) | as_bool }}"
+    overrides:
+      vars:
+        claims_enabled: true
+    given:
+      - input: ref('ahrq_quality_indicators__int_pqi_01_exclusions')
+        format: sql
+        rows: &exclusion_rows |
+          select
+              'source-a' as data_source
+            , 'encounter-1' as encounter_id
+            , 'regression fixture' as exclusion_reason
+            , 1 as exclusion_number
+      - input: ref('ahrq_quality_indicators__int_pqi_03_exclusions')
+        format: sql
+        rows: *exclusion_rows
+      - input: ref('ahrq_quality_indicators__int_pqi_05_exclusions')
+        format: sql
+        rows: *exclusion_rows
+      - input: ref('ahrq_quality_indicators__int_pqi_07_exclusions')
+        format: sql
+        rows: *exclusion_rows
+      - input: ref('ahrq_quality_indicators__int_pqi_08_exclusions')
+        format: sql
+        rows: *exclusion_rows
+      - input: ref('ahrq_quality_indicators__int_pqi_11_exclusions')
+        format: sql
+        rows: *exclusion_rows
+      - input: ref('ahrq_quality_indicators__int_pqi_12_exclusions')
+        format: sql
+        rows: *exclusion_rows
+      - input: ref('ahrq_quality_indicators__int_pqi_14_exclusions')
+        format: sql
+        rows: *exclusion_rows
+      - input: ref('ahrq_quality_indicators__int_pqi_15_exclusions')
+        format: sql
+        rows: *exclusion_rows
+      - input: ref('ahrq_quality_indicators__int_pqi_16_exclusions')
+        format: sql
+        rows: *exclusion_rows
+    expect:
+      rows:
+        - {pqi_number: '01'}
+        - {pqi_number: '03'}
+        - {pqi_number: '05'}
+        - {pqi_number: '07'}
+        - {pqi_number: '08'}
+        - {pqi_number: '11'}
+        - {pqi_number: '12'}
+        - {pqi_number: '14'}
+        - {pqi_number: '15'}
+        - {pqi_number: '16'}
